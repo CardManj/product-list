@@ -1,9 +1,12 @@
+import  Gallery  from "./components/gallery/Gallery"
+import  Aside  from "./components/aside/Aside"
 function App() {
 
   return (
-    <>
-      <h1 className='bg-red-500 text-6xl'>hola</h1>
-    </>
+    <main className="grid grid-flow-col gap-1 grid-cols-3 px-3">
+      <Gallery/>
+      <Aside/>
+    </main>
   )
 }
 
