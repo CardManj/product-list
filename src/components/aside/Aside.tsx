@@ -13,7 +13,6 @@ export default function Aside() {
     <aside className="bg-slate-400 col-span-1">
       <h1>aside</h1>
       <div className="grid gap-2 p-5">
-        <img src="/design/active-states.jpg" alt="" />
         <AddToCardIcon></AddToCardIcon>
         <DecrementIcon></DecrementIcon>
         <IncrementIcon></IncrementIcon>
