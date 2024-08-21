@@ -10,7 +10,7 @@ export default function Gallery() {
         <Card></Card>
       </div>
 
-      <div className="p-5 w-[70%]">
+      <div className="p-5 mt-64 w-[70%] ">
         <img src="/design/active-states.jpg" alt="" />
       </div>
     </main>
