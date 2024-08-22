@@ -1,4 +1,10 @@
-[
+interface Data{
+    image: object,
+    name: string,
+    category: string,
+    price: number,
+}
+export const data_group: Data[]=[
     {
        "image": {
             "thumbnail": "./assets/images/image-waffle-thumbnail.jpg",

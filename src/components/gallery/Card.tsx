@@ -1,3 +1,4 @@
+import { data_group } from '../../../data';
 import { Button } from '../Button';
 
 export default function Card() {
@@ -7,11 +8,13 @@ export default function Card() {
         <img src="src\assets\images\image-waffle-desktop.jpg" alt="product image" className="w-full rounded-md" />
         <Button />
       </section>
-      <section className="px-1 flex flex-col py-1 mt-3">
-        <span className="text-xs text-gray-400 font-light mb-1">categoria</span>
-        <h1 className="text-xl 16px font-semibold">Titulo</h1>
-        <p className="text-sm font-semibold text-MentorRed">$0.00</p>
-      </section>
+      {data_group.map((data) => (
+        <section className="px-1 flex flex-col py-1 mt-3">
+          <span className="text-xs text-gray-400 font-light mb-1">{data.category}</span>
+          <h1 className="text-xl 16px font-semibold">{data.name}</h1>
+          <p className="text-sm font-semibold text-MentorRed">{data.price}</p>
+        </section>
+      ))}
     </section>
   );
 }
