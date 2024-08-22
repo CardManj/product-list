@@ -1,36 +1,62 @@
-import { ButtonHTMLAttributes } from "react";
+import { AddToCardIcon, DecrementIcon, IncrementIcon } from '../../assets/icons';
+import { useState } from 'react';
 
-export enum ButtonVariant {
-  Active = "active",
-  Inactive = "inactive",
-}
+export function Button() {
+  const [isActive, setIsActive] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  variant?: ButtonVariant;
-}
+  const handleToggle = () => {
+    if (isActive) {
+      // Si el botón está activo, lo pasamos a inactivo y reseteamos la cantidad
+      setIsActive(false);
+      setQuantity(1);
+    } else {
+      // Si el botón está inactivo, lo activamos
+      setIsActive(true);
+    }
+  };
 
-const buttonStyles = {
-  [ButtonVariant.Active]:
-    "flex items-center justify-center border rounded-3xl w-30 h-fit px-12 py-2 bg-MentorRed text-white font-semibold border-MentorRed text-xs",
-  [ButtonVariant.Inactive]:
-    "flex items-center justify-center border rounded-3xl w-30 h-fit px-3 py-2 border-MentorRed bg-white text-xs hover:text-MentorRed",
-};
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
 
-export function Button({
-  children,
-  type = "button",
-  variant = ButtonVariant.Inactive,
-  className,
-  onClick,
-}: ButtonProps) {
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
+
   return (
-    <button
-      className={`${buttonStyles[variant]} transition duration-300 ${className}`}
-      type={type}
-      onClick={onClick}
-    >
-      {children}
-    </button>
+    <div className="flex items-center">
+      {!isActive ? (
+        // Botón inactivo
+        <button
+          className="flex items-center justify-center border rounded-3xl w-30 h-fit px-3 py-2 border-MentorRed bg-white text-xs"
+          onClick={handleToggle}
+        >
+          <AddToCardIcon className="mr-2" />
+          Add to Cart
+        </button>
+      ) : (
+        // Botón activo
+        <div className="flex items-center justify-center border rounded-3xl w-30 h-fit px-3 py-2 border-MentorRed bg-MentorRed text-white text-xs">
+          <button
+            className="px-1 items-center border border-white py-2  hover:bg-white hover:text-MentorRed rounded-full"
+            onClick={handleDecrement}
+          >
+            <DecrementIcon className="" />
+          </button>
+          <span className="px-5" onClick={handleToggle}>
+            {quantity}
+          </span>
+          <button
+            className="px-1 flex items-center justify-center  border border-white py-1 hover:bg-white hover:text-MentorRed rounded-full"
+            onClick={handleIncrement}
+          >
+            <IncrementIcon className="" />
+          </button>
+        </div>
+      )}
+    </div>
   );
 }
