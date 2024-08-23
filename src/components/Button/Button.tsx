@@ -11,6 +11,7 @@ export function Button() {
 
   const handleToggle = () => {
     if (isActive) {
+      alert("You're shure?");
       // Si el botón está activo, lo pasamos a inactivo y reseteamos la cantidad
       setIsActive(false);
       setQuantity(1);
@@ -31,7 +32,7 @@ export function Button() {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="absolute items-center transition-colors delay-75">
       {!isActive ? (
         // Botón inactivo
         <button
@@ -43,7 +44,7 @@ export function Button() {
         </button>
       ) : (
         // Botón activo
-        <div className="flex items-center justify-center border rounded-3xl w-30 h-fit px-3 py-2 border-MentorRed bg-MentorRed text-white text-xs">
+        <div className="cursor-pointer flex items-center justify-center border rounded-3xl w-30 h-fit px-3 py-2 border-MentorRed bg-MentorRed text-white text-xs">
           <button
             className="px-1 items-center border border-white py-2  hover:bg-white hover:text-MentorRed rounded-full"
             onClick={handleDecrement}

@@ -1,24 +1,57 @@
 import { data_group } from "../../../data";
 import { Button } from "../Button";
 
+// Define la interfaz para la imagen
+interface ImageType {
+  thumbnail: string;
+  mobile: string;
+  tablet: string;
+  desktop: string;
+}
+
+// Define la interfaz para los datos del producto
+interface Data {
+  id: number;
+  image: ImageType;
+  name: string;
+  category: string;
+  price: number;
+}
+
+// Función auxiliar para seleccionar la imagen adecuada según el tamaño de la pantalla
+const getImageByDevice = (image: ImageType): string => {
+  if (window.innerWidth < 640) {
+    return image.mobile; // Para pantallas móviles
+  } else if (window.innerWidth < 1024) {
+    return image.tablet; // Para pantallas de tablet
+  } else {
+    return image.desktop; // Para pantallas de escritorio
+  }
+};
+
 export default function Card() {
   return (
-    <section className="w-72 rounded-t-md">
-      <section className="flex flex-col justify-center aling-center items-center">
-        <img
-          src="src\assets\images\image-waffle-desktop.jpg"
-          alt="product image"
-          className="w-full rounded-xl"
-        />
-        <Button />
-      </section>
-      {data_group.map((data) => (
-        <section className="px-1 flex flex-col py-1 mt-3">
-          <span className="text-xs text-gray-400 font-light mb-1">
-            {data.category}
-          </span>
-          <h1 className="text-xl 16px font-semibold">{data.name}</h1>
-          <p className="text-sm font-semibold text-MentorRed">${data.price}</p>
+    <section className="flex flex-wrap gap-4">
+      {data_group.map((data: Data) => (
+        <section key={data.id} className="w-72 rounded-t-md">
+          <section className="flex flex-col justify-center align-center items-center">
+            {/* Llama a la función para obtener la imagen según el dispositivo */}
+            <img
+              src={getImageByDevice(data.image)}
+              alt={`${data.name} image`}
+              className="w-full rounded-xl"
+            />
+            <Button />
+          </section>
+          <section className="px-1 flex flex-col py-1 mt-3">
+            <span className="text-xs text-gray-400 font-light mb-1">
+              {data.category}
+            </span>
+            <h1 className="text-xl font-semibold">{data.name}</h1>
+            <p className="text-sm font-semibold text-MentorRed">
+              ${data.price}
+            </p>
+          </section>
         </section>
       ))}
     </section>
