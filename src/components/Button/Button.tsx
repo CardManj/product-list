@@ -1,5 +1,9 @@
-import { AddToCardIcon, DecrementIcon, IncrementIcon } from '../../assets/icons';
-import { useState } from 'react';
+import {
+  AddToCardIcon,
+  DecrementIcon,
+  IncrementIcon,
+} from "../../assets/icons";
+import { useState } from "react";
 
 export function Button() {
   const [isActive, setIsActive] = useState(false);
