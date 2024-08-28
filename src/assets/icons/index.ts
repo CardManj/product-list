@@ -5,3 +5,5 @@ export { OrderConfirmedIcon } from "./OrderConfirmed.icon";
 export { RemoveItemIcon } from "./RemoveItem.icon";
 export { TreeLogoIcon } from "./TreeLogo.icon";
 export { EmptyCart } from "./EmptyCart.picture";
+export { OpenArrowIcon } from "./OpenArrow.icon";
+export { CloseArrowIcon } from "./CloseArrow.icon";

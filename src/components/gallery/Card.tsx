@@ -55,7 +55,7 @@ export default function Card() {
               {data.name}
             </h1>
             <p className="max-lg:text-xs text-sm font-semibold text-MentorRed">
-              ${data.price}
+              ${data.price.toFixed(2)}
             </p>
           </section>
         </section>

@@ -38,7 +38,7 @@ export const data_group: Data[] = [
     },
     name: "Vanilla Bean Crème Brûlée",
     category: "Crème Brûlée",
-    price: 7.0,
+    price: 7.00,
   },
   {
     id: 0o50124,
@@ -50,7 +50,7 @@ export const data_group: Data[] = [
     },
     name: "Macaron Mix of Five",
     category: "Macaron",
-    price: 8.0,
+    price: 8.00,
   },
   {
     id: 0o50125,
@@ -62,7 +62,7 @@ export const data_group: Data[] = [
     },
     name: "Classic Tiramisu",
     category: "Tiramisu",
-    price: 5.5,
+    price: 5.50,
   },
   {
     id: 0o50126,
@@ -74,7 +74,7 @@ export const data_group: Data[] = [
     },
     name: "Pistachio Baklava",
     category: "Baklava",
-    price: 4.0,
+    price: 4.00,
   },
   {
     id: 0o50127,
@@ -86,7 +86,7 @@ export const data_group: Data[] = [
     },
     name: "Lemon Meringue Pie",
     category: "Pie",
-    price: 5.0,
+    price: 5.00,
   },
   {
     id: 0o50131,
@@ -98,7 +98,7 @@ export const data_group: Data[] = [
     },
     name: "Red Velvet Cake",
     category: "Cake",
-    price: 4.5,
+    price: 4.50,
   },
   {
     id: 0o50132,
@@ -110,7 +110,7 @@ export const data_group: Data[] = [
     },
     name: "Salted Caramel Brownie",
     category: "Brownie",
-    price: 4.5,
+    price: 4.50,
   },
   {
     id: 0o50133,
@@ -122,6 +122,6 @@ export const data_group: Data[] = [
     },
     name: "Vanilla Panna Cotta",
     category: "Panna Cotta",
-    price: 6.5,
+    price: 6.50,
   },
 ];
